@@ -20,25 +20,19 @@ public class RetrofitAnime {
     private static String BASH_URL ="https://api.jikan.moe/v3/search/";
 
 
-
-
     public static Retrofit getmRetrofitAnime(){
-
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .connectTimeout(2000, TimeUnit.SECONDS)
-                .readTimeout(3000, TimeUnit.SECONDS)
-                .writeTimeout(3000, TimeUnit.SECONDS);
+                .connectTimeout(4000, TimeUnit.SECONDS)
+                .readTimeout(5000, TimeUnit.SECONDS)
+                .writeTimeout(5000, TimeUnit.SECONDS);
 
 
         if(mRetrofit==null){
-            Log.d("ok","ok m retrofit ");
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(BASH_URL)
                     .client(httpClient.build())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            Log.d("ok","ok m retrofit full ");
-
         }
 
         return mRetrofit;

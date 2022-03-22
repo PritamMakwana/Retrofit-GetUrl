@@ -12,18 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.retrofitgeturldemo.R;
-import com.example.retrofitgeturldemo.activity.model.ModelAnime;
+import com.example.retrofitgeturldemo.activity.model.AnimeResponse;
+import com.example.retrofitgeturldemo.activity.model.Result;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.AnimeViewHolder> {
 
-    private List<ModelAnime> mModelAnimes;
+    private ArrayList<Result> mModelAnimes;
     private Context mContext;
 
-    public AdapterAnime(List<ModelAnime> mModelAnimes, Context mContext) {
+    public AdapterAnime(ArrayList<Result> mModelAnimes, Context mContext) {
         this.mModelAnimes = mModelAnimes;
         this.mContext = mContext;
     }
@@ -38,24 +40,24 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.AnimeViewHol
 
     @Override
     public void onBindViewHolder(@NonNull AnimeViewHolder holder, int position) {
-        ModelAnime positionAnime = mModelAnimes.get(position);
-        holder.mName.setText(positionAnime.getmName());
-        holder.mEpisode.setText(positionAnime.getmEpisodes());
-        holder.mType.setText(positionAnime.getmType());
-        holder.mRatingBar.setRating(positionAnime.getmScore());
+        Result positionAnime = mModelAnimes.get(position);
+        holder.mName.setText(positionAnime.getTitle());
+        holder.mEpisode.setText(positionAnime.getEpisodes());
+        holder.mType.setText(positionAnime.getType());
+        holder.mRatingBar.setRating(positionAnime.getScore());
 
-        Picasso.Builder builder = new Picasso.Builder(mContext);
-        builder.downloader(new OkHttp3Downloader(mContext));
-        builder.build().load(positionAnime.getmImage())
-                .placeholder((R.drawable.ic_launcher_background))
-                .error(R.drawable.ic_launcher_background)
-                .into(holder.mImageView);
+//        Picasso.Builder builder = new Picasso.Builder(mContext);
+//        builder.downloader(new OkHttp3Downloader(mContext));
+//        builder.build().load(positionAnime.getImageUrl())
+//                .placeholder((R.drawable.ic_launcher_background))
+//                .error(R.drawable.ic_launcher_background)
+//                .into(holder.mImageView);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mModelAnimes.size();
     }
 
     public class AnimeViewHolder extends RecyclerView.ViewHolder {
