@@ -1,98 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:background="@drawable/rv_item"
+    android:layout_margin="5dp"
+    android:layout_height="120dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:cardCornerRadius="60dp"
-        android:layout_margin="10dp"
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_item"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    <ImageView
-        android:id="@+id/img_item"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@id/cv_image"
-        app:layout_constraintEnd_toEndOf="@id/cv_image"
-        app:layout_constraintStart_toStartOf="@id/cv_image"
-        app:layout_constraintTop_toTopOf="@id/cv_image"
-         />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rubikblack"
+        android:gravity="center"
+        android:maxLines="1"
         android:padding="2dp"
-        android:textSize="20dp"
+        android:paddingEnd="5dp"
         android:text="Name"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cv_image"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_item"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_type"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:padding="2dp"
+        android:fontFamily="@font/rubikvariablefont_light"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="1dp"
         android:text="Type : nurota"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cv_image"
+        android:textColor="#566573"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/img_item"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
         android:id="@+id/tv_episodes"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/rubikvariablefont_light"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="1dp"
         android:text="Episodes : 100"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cv_image"
-        app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+        android:textColor="#566573"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_type"
+        app:layout_constraintStart_toEndOf="@+id/tv_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
-    <RatingBar
+    <androidx.appcompat.widget.AppCompatRatingBar
         android:id="@+id/rb_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:rating="4.5"
+        android:layout_width="232dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:isIndicator="true"
         android:numStars="5"
+        android:progressBackgroundTint="#566573"
+        android:progressTint="@color/Gold"
+        android:rating="2.3"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:scrollX="5dp"
+        android:scrollY="5dp"
+        android:secondaryProgressTint="#566573"
+        android:stepSize="0.1"
+        android:transformPivotX="5dp"
+        android:transformPivotY="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cv_image"
-        app:layout_constraintTop_toBottomOf="@+id/tv_episodes" />
-
-
-
-
-
+        app:layout_constraintStart_toEndOf="@+id/img_item"
+        app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

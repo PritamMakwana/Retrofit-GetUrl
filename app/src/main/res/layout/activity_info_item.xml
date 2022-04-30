@@ -5,58 +5,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121212"
     tools:context=".activity.InfoItemActivity">
 
   <ImageView
       android:id="@+id/img_back"
-      android:layout_width="60dp"
-      android:layout_height="45dp"
+      android:layout_width="50dp"
+      android:layout_height="30dp"
       android:src="@drawable/arrow_back"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="1.0" />
 
 
-  <androidx.cardview.widget.CardView
-      android:id="@+id/cv_showimage"
-      android:layout_width="200dp"
-      android:layout_height="200dp"
-      android:layout_marginTop="60dp"
-      app:cardCornerRadius="100dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_showitem"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
         android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintBottom_toBottomOf="@id/cv_image"
-        app:layout_constraintEnd_toEndOf="@id/cv_image"
-        app:layout_constraintStart_toStartOf="@id/cv_image"
-        app:layout_constraintTop_toTopOf="@id/cv_image" />
-  </androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
   <TextView
       android:id="@+id/tv_showname"
       android:layout_width="wrap_content"
-      android:layout_height="40dp"
-      android:padding="2dp"
-      android:text="Name"
-      android:layout_marginTop="10dp"
-      android:textColor="@color/black"
-      android:textSize="20dp"
+      android:layout_height="wrap_content"
+      android:padding="10dp"
+      android:text="Namejfhhjghghjghfgjgcnbvnvhfjgcgjfjgfmhjfghdhgc"
+      android:textStyle="bold"
+      android:layout_margin="5dp"
+      android:textColor="@color/white"
+      android:textSize="30dp"
+      android:fontFamily="@font/rubikblack"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/cv_showimage" />
+      app:layout_constraintTop_toBottomOf="@+id/img_showitem" />
 
 
   <ScrollView
       android:id="@+id/scrollView2"
       android:layout_width="0dp"
       android:layout_height="0dp"
+      android:layout_margin="5dp"
       android:background="#5754BC"
       android:backgroundTint="#03BACD0F"
       android:paddingLeft="10dp"
@@ -71,16 +68,16 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:padding="2dp"
-        android:text="@string/info_desc"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:fontFamily="@font/rubikvariablefont_light"
         android:lines="1000"
         android:maxLength="1000"
         android:minLines="1"
         android:scrollbars="vertical"
         android:shadowColor="@color/purple_700"
         android:singleLine="false"
+        android:text="@string/info_desc"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
